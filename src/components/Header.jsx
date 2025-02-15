@@ -4,7 +4,7 @@ import { CgProfile } from 'react-icons/cg';
 const Header = () => {
     return (
         <header className="flex justify-between items-center mb-6">
-            <div className="flex space-x-4 items-center gap-10">
+            <div className="flex space-x-4 items-center gap-20">
                 <a href="">
                     <img src="/api/placeholder/32/32" alt="Logo" className="h-8" />
                 </a>

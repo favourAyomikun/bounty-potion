@@ -2,6 +2,7 @@ import React from 'react';
 import { IoSearch } from "react-icons/io5";
 import { traders } from '../data/traders';
 import Header from '../components/Header';
+import { MdOutlineArrowDropDown, MdOutlineSettingsInputComponent } from 'react-icons/md';
 
 const Leaderboardpage = () => {
   const tabs = ['Traders', 'Groups'];
@@ -9,70 +10,127 @@ const Leaderboardpage = () => {
 
 
   return (
-    <div className="bg-gray-900 min-h-screen text-white p-6">
+    <div className="bg-[#060611] min-h-screen text-white p-6">
       {/* Header */}
       <Header />
 
-      {/* Tab Navigation */}
-      <div className="flex space-x-4 mb-4">
-        {tabs.map((tab) => (
-          <button
-            key={tab}
-            className={`px-4 py-2 rounded-lg ${tab === 'Traders' ? 'bg-purple-600' : 'text-gray-400'
-              }`}
-          >
-            {tab}
-          </button>
-        ))}
+      <div className='flex items-center justify-between mt-20 mb-6'>
+
+        {/* First section */}
+        <div className='flex items-center gap-20'>
+          {/* Tab Navigation */}
+          <div className="flex items-center space-x-4">
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${tab === 'Traders' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
+                  }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+
+          {/* Time Frame Selection */}
+          <div className="flex items-center space-x-4 ">
+            {timeframes.map((time) => (
+              <button
+                key={time}
+                className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${time === 'Daily' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
+                  }`}
+              >
+                {time}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Second section */}
+        <div className="flex items-center gap-3 flex-1 max-w-[40%]">
+          {/* Search Bar */}
+          <div className="relative w-full">
+            <IoSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <input
+              type="text"
+              placeholder="Search by name or wallet"
+              className="w-full bg-gray-800 rounded-[20px] pl-10 pr-4 py-2 text-gray-300 border border-[#464558] focus:outline-none focus:ring-2 focus:ring-purple-600 text-sm"
+            />
+          </div>
+
+          {/* Crystal Chart Icon */}
+          <div className="relative flex items-center justify-center bg-[#25223D] border border-[#464558] px-4 py-2 rounded-[20px]">
+            <MdOutlineSettingsInputComponent className="text-lg cursor-pointer" />
+            <div className="absolute -bottom-1 -right-1 flex items-center justify-center w-4 h-4 bg-[#AA00FF] rounded-full text-[10px] font-medium">
+              2
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* Time Frame Selection */}
-      <div className="flex space-x-4 mb-6">
-        {timeframes.map((time) => (
-          <button
-            key={time}
-            className={`px-4 py-2 rounded-lg ${time === 'Daily' ? 'bg-gray-800' : 'text-gray-400'
-              }`}
-          >
-            {time}
-          </button>
-        ))}
-      </div>
-
-      {/* Search Bar */}
-      <div className="relative mb-6">
-        <IoSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-        <input
-          type="text"
-          placeholder="Search by name or wallet"
-          className="w-full bg-gray-800 rounded-lg pl-10 pr-4 py-2 text-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600"
-        />
-      </div>
-
-      {/* Leaderboard Table */}
-      <div className="overflow-x-auto">
+      {/* Leaderboard Table(Third section) */}
+      <div className="overflow-x-auto p-2"> {/* Added padding to the wrapper */}
         <table className="w-full">
-          <thead>
-            <tr className="text-gray-400 text-sm">
-              <th className="text-left pb-4">Rank</th>
-              <th className="text-left pb-4">Trader</th>
-              <th className="text-left pb-4">Followers</th>
-              <th className="text-left pb-4">Tokens</th>
-              <th className="text-left pb-4">Win Rate</th>
-              <th className="text-left pb-4">Trades</th>
-              <th className="text-left pb-4">Avg Buy</th>
-              <th className="text-left pb-4">Avg Entry</th>
-              <th className="text-left pb-4">Avg Hold</th>
-              <th className="text-left pb-4">Realized PNL</th>
-              <th className="text-left pb-4">Share</th>
+          <thead className="bg-[#25223D] text-gray-400 text-[13.9px]">
+            <tr>
+              <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">Rank</th>
+              <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">Trader</th>
+              <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+                <div className="flex justify-center items-center gap-1">
+                  Followers
+                  <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
+                </div>
+              </th>
+              <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+                <div className="flex justify-center items-center gap-1">
+                  Tokens
+                  <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
+                </div>
+              </th>
+              <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+                <div className="flex justify-center items-center gap-1">
+                  Win Rate
+                  <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
+                </div>
+              </th>
+              <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+                <div className="flex justify-center items-center gap-1">
+                  Trades
+                  <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
+                </div>
+              </th>
+              <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+                <div className="flex justify-center items-center gap-1">
+                  Avg Buy
+                  <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
+                </div>
+              </th>
+              <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+                <div className="flex justify-center items-center gap-1">
+                  Avg Entry
+                  <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
+                </div>
+              </th>
+              <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+                <div className="flex justify-center items-center gap-1">
+                  Avg Hold
+                  <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
+                </div>
+              </th>
+              <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+                <div className="flex justify-center items-center gap-1">
+                  Realized PNL
+                  <MdOutlineArrowDropDown className="text-xl text-[#CCAD59]" />
+                </div>
+              </th>
+              <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">Share</th>
             </tr>
           </thead>
           <tbody>
             {traders.map((trader, index) => (
-              <tr key={index} className="border-t border-gray-800">
-                <td className="py-4">{trader.rank}</td>
-                <td className="py-4">
-                  <div className="flex items-center space-x-2">
+              <tr key={index} className="border-t border-[#23242C] bg-[#11121B] text-center">
+                <td className="py-4 px-4 align-middle">{trader.rank}</td>
+                <td className="py-4 px-4 align-middle">
+                  <div className="flex justify-center items-center space-x-2">
                     <img src="/api/placeholder/32/32" alt="Avatar" className="rounded-full h-8 w-8" />
                     <div>
                       <div className="font-medium">{trader.name}</div>
@@ -80,15 +138,15 @@ const Leaderboardpage = () => {
                     </div>
                   </div>
                 </td>
-                <td className="py-4">{trader.followers}</td>
-                <td className="py-4">{trader.tokens}</td>
-                <td className="py-4 text-green-500">{trader.winRate}</td>
-                <td className="py-4">{trader.trades}</td>
-                <td className="py-4">{trader.avgBuy}</td>
-                <td className="py-4">{trader.avgEntry}</td>
-                <td className="py-4">{trader.avgHold}</td>
-                <td className="py-4 text-green-500">{trader.pnl}</td>
-                <td className="py-4">
+                <td className="py-4 px-4 align-middle">{trader.followers}</td>
+                <td className="py-4 px-4 align-middle">{trader.tokens}</td>
+                <td className="py-4 px-4 align-middle text-green-500">{trader.winRate}</td>
+                <td className="py-4 px-4 align-middle">{trader.trades}</td>
+                <td className="py-4 px-4 align-middle">{trader.avgBuy}</td>
+                <td className="py-4 px-4 align-middle">{trader.avgEntry}</td>
+                <td className="py-4 px-4 align-middle">{trader.avgHold}</td>
+                <td className="py-4 px-4 align-middle text-green-500">{trader.pnl}</td>
+                <td className="py-4 px-4 align-middle">
                   <button className="text-gray-400 hover:text-white">Share</button>
                 </td>
               </tr>
@@ -96,6 +154,7 @@ const Leaderboardpage = () => {
           </tbody>
         </table>
       </div>
+
     </div>
   );
 };
