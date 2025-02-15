@@ -9,8 +9,9 @@ const Header = () => {
                     <img src="/api/placeholder/32/32" alt="Logo" className="h-8" />
                 </a>
                 <nav className="flex space-x-6 text-base">
-                    <a href="#" className="text-white">Leaderboards</a>
-                    <a href="#" className="text-white">Learn</a>
+                    <a href="/" className="text-white">Leaderboards</a>
+                    <a href="https://docs.potionleaderboard.com" target='_blank' rel="noopener noreferrer"
+                        className="text-white">Learn</a>
                     <a href="#" className="text-white">Prizes</a>
                 </nav>
             </div>
