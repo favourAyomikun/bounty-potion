@@ -1,7 +1,10 @@
 import React from 'react';
 import { IoSearch } from "react-icons/io5";
+import { traders } from '../data/traders';
+import { FaDiscord, FaXTwitter } from 'react-icons/fa6';
+import { CgProfile } from 'react-icons/cg';
 
-const TradingLeaderboard = () => {
+const Leaderboardpage = () => {
   const tabs = ['Traders', 'Groups'];
   const timeframes = ['Daily', 'Weekly', 'Monthly', 'All-Time'];
 
@@ -12,22 +15,22 @@ const TradingLeaderboard = () => {
       <div className="flex justify-between items-center mb-6">
         <div className="flex space-x-4 items-center">
           <img src="/api/placeholder/32/32" alt="Logo" className="h-8" />
-          <nav className="flex space-x-4">
+          <nav className="flex space-x-4" >
             <a href="#" className="text-white">Leaderboards</a>
-            <a href="#" className="text-gray-400">Learn</a>
-            <a href="#" className="text-gray-400">Prizes</a>
+            <a href="#" className="text-white">Learn</a>
+            <a href="#" className="text-white">Prizes</a>
           </nav>
         </div>
-        
+
         <div className="flex space-x-4">
-          <a href="#" className="text-gray-400">
-            <img src="/api/placeholder/24/24" alt="Twitter" className="h-6" />
+          <a href="#" className="text-[#858585] text-2xl">
+            <FaXTwitter />
           </a>
-          <a href="#" className="text-gray-400">
-            <img src="/api/placeholder/24/24" alt="Discord" className="h-6" />
+          <a href="#" className="text-[#858585] text-2xl">
+            <FaDiscord />
           </a>
-          <a href="#" className="text-gray-400">
-            <img src="/api/placeholder/24/24" alt="Profile" className="h-6 rounded-full" />
+          <a href="#" className="text-[#858585] text-2xl">
+            <CgProfile />
           </a>
         </div>
       </div>
@@ -37,9 +40,8 @@ const TradingLeaderboard = () => {
         {tabs.map((tab) => (
           <button
             key={tab}
-            className={`px-4 py-2 rounded-lg ${
-              tab === 'Traders' ? 'bg-purple-600' : 'text-gray-400'
-            }`}
+            className={`px-4 py-2 rounded-lg ${tab === 'Traders' ? 'bg-purple-600' : 'text-gray-400'
+              }`}
           >
             {tab}
           </button>
@@ -51,9 +53,8 @@ const TradingLeaderboard = () => {
         {timeframes.map((time) => (
           <button
             key={time}
-            className={`px-4 py-2 rounded-lg ${
-              time === 'Daily' ? 'bg-gray-800' : 'text-gray-400'
-            }`}
+            className={`px-4 py-2 rounded-lg ${time === 'Daily' ? 'bg-gray-800' : 'text-gray-400'
+              }`}
           >
             {time}
           </button>
@@ -121,4 +122,4 @@ const TradingLeaderboard = () => {
   );
 };
 
-export default LeaderboardPage;
+export default Leaderboardpage;
