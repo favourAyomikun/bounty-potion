@@ -1,12 +1,9 @@
-import { useState } from 'react'
-// import './App.css'
+import Leaderboardpage from "./page/Leaderboardpage"
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div className='text-xl text-yellow-500 animate-bounce'>Habib is my friend?...... Noo👍</div>
+      <Leaderboardpage />
     </>
   )
 }
