@@ -1,8 +1,7 @@
 import React from 'react';
 import { IoSearch } from "react-icons/io5";
 import { traders } from '../data/traders';
-import { FaDiscord, FaXTwitter } from 'react-icons/fa6';
-import { CgProfile } from 'react-icons/cg';
+import Header from '../components/Header';
 
 const Leaderboardpage = () => {
   const tabs = ['Traders', 'Groups'];
@@ -12,28 +11,7 @@ const Leaderboardpage = () => {
   return (
     <div className="bg-gray-900 min-h-screen text-white p-6">
       {/* Header */}
-      <div className="flex justify-between items-center mb-6">
-        <div className="flex space-x-4 items-center">
-          <img src="/api/placeholder/32/32" alt="Logo" className="h-8" />
-          <nav className="flex space-x-4" >
-            <a href="#" className="text-white">Leaderboards</a>
-            <a href="#" className="text-white">Learn</a>
-            <a href="#" className="text-white">Prizes</a>
-          </nav>
-        </div>
-
-        <div className="flex space-x-4">
-          <a href="#" className="text-[#858585] text-2xl">
-            <FaXTwitter />
-          </a>
-          <a href="#" className="text-[#858585] text-2xl">
-            <FaDiscord />
-          </a>
-          <a href="#" className="text-[#858585] text-2xl">
-            <CgProfile />
-          </a>
-        </div>
-      </div>
+      <Header />
 
       {/* Tab Navigation */}
       <div className="flex space-x-4 mb-4">
