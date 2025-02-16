@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <header className="flex justify-between items-center mb-6">
             <div className="flex space-x-4 items-center gap-20">
-                <a href="">
+                <a href="/">
                     <img src="/api/placeholder/32/32" alt="Logo" className="h-8" />
                 </a>
                 <nav className="flex space-x-6 text-base">

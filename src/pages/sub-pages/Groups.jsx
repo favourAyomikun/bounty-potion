@@ -1,8 +1,7 @@
 const Groups = () => {
     return (
       <div>
-        <h2 className="text-xl font-semibold">Groups Leaderboard</h2>
-        {/* Groups content here */}
+        <h1 className="text-4xl font-semibold text-center mt-24">Coming soon....📢</h1>
       </div>
     );
   };
