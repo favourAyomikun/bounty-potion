@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { IoSearch } from "react-icons/io5";
 import { traders } from '../data/traders';
 import Header from '../components/Header';
 import { MdOutlineArrowDropDown, MdOutlineSettingsInputComponent } from 'react-icons/md';
 
 const Leaderboardpage = () => {
-  const tabs = ['Traders', 'Groups'];
-  const timeframes = ['Daily', 'Weekly', 'Monthly', 'All-Time'];
+  // state to track selected filters
+  const [selectedTab, setSelectedTab] = useState('Traders')
+  const [selectedTimeFrame, setSelectedTimeFrame] = useState('Daily')
 
 
   return (
@@ -14,34 +15,63 @@ const Leaderboardpage = () => {
       {/* Header */}
       <Header />
 
-      <div className='flex items-center justify-between mt-20 mb-6'>
-
-        {/* First section */}
-        <div className='flex items-center gap-20'>
+      {/* First section */}
+      <div className="flex items-center justify-between mt-20 mb-6">
+        <div className="flex items-center gap-20">
           {/* Tab Navigation */}
           <div className="flex items-center space-x-4">
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${tab === 'Traders' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
-                  }`}
-              >
-                {tab}
-              </button>
-            ))}
+            <button
+              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${
+                selectedTab === 'Traders' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
+              }`}
+              onClick={() => setSelectedTab('Traders')}
+            >
+              Traders
+            </button>
+            <button
+              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${
+                selectedTab === 'Groups' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
+              }`}
+              onClick={() => setSelectedTab('Groups')}
+            >
+              Groups
+            </button>
           </div>
 
           {/* Time Frame Selection */}
-          <div className="flex items-center space-x-4 ">
-            {timeframes.map((time) => (
-              <button
-                key={time}
-                className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${time === 'Daily' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
-                  }`}
-              >
-                {time}
-              </button>
-            ))}
+          <div className="flex items-center space-x-4">
+            <button
+              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${
+                selectedTimeFrame === 'Daily' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
+              }`}
+              onClick={() => setSelectedTimeFrame('Daily')}
+            >
+              Daily
+            </button>
+            <button
+              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${
+                selectedTimeFrame === 'Weekly' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
+              }`}
+              onClick={() => setSelectedTimeFrame('Weekly')}
+            >
+              Weekly
+            </button>
+            <button
+              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${
+                selectedTimeFrame === 'Monthly' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
+              }`}
+              onClick={() => setSelectedTimeFrame('Monthly')}
+            >
+              Monthly
+            </button>
+            <button
+              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${
+                selectedTimeFrame === 'All-Time' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
+              }`}
+              onClick={() => setSelectedTimeFrame('All-Time')}
+            >
+              All-Time
+            </button>
           </div>
         </div>
 
