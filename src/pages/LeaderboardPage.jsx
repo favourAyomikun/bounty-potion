@@ -12,7 +12,7 @@ const Leaderboardpage = () => {
   const [selectedTab, setSelectedTab] = useState('Traders')
   const [selectedTimeFrame, setSelectedTimeFrame] = useState('Daily')
 
-  
+
   const [isWalletModalOpen, setIsWalletModalOpen] = useState(false);
   const [isWalletConnected, setIsWalletConnected] = useState(false);
 
@@ -42,14 +42,12 @@ const Leaderboardpage = () => {
       {/* Header */}
       <Header />
 
-      {/* First section */}
-      <div className="flex items-center justify-between mt-20 mb-6">
-        <div className="flex items-center gap-20">
+      <div className="flex flex-col md:flex-row items-center justify-between mt-20 mb-6">
+        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-20">
           {/* Tab Navigation */}
-          <div className="flex items-center space-x-4">
+          <div className="flex flex-wrap gap-2 md:space-x-4">
             <button
-              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTab === 'Traders' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
-                }`}
+              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTab === 'Traders' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'}`}
               onClick={() => {
                 setSelectedTab("Traders")
                 navigate("/")
@@ -58,8 +56,7 @@ const Leaderboardpage = () => {
               Traders
             </button>
             <button
-              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTab === 'Groups' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
-                }`}
+              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTab === 'Groups' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'}`}
               onClick={() => {
                 setSelectedTab("Groups")
                 navigate("/groups")
@@ -70,31 +67,27 @@ const Leaderboardpage = () => {
           </div>
 
           {/* Time Frame Selection */}
-          <div className="flex items-center space-x-4">
+          <div className="flex flex-wrap gap-2 md:space-x-4">
             <button
-              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTimeFrame === 'Daily' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
-                }`}
+              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTimeFrame === 'Daily' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'}`}
               onClick={() => setSelectedTimeFrame('Daily')}
             >
               Daily
             </button>
             <button
-              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTimeFrame === 'Weekly' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
-                }`}
+              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTimeFrame === 'Weekly' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'}`}
               onClick={() => setSelectedTimeFrame('Weekly')}
             >
               Weekly
             </button>
             <button
-              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTimeFrame === 'Monthly' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
-                }`}
+              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTimeFrame === 'Monthly' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'}`}
               onClick={() => setSelectedTimeFrame('Monthly')}
             >
               Monthly
             </button>
             <button
-              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTimeFrame === 'All-Time' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
-                }`}
+              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTimeFrame === 'All-Time' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'}`}
               onClick={() => setSelectedTimeFrame('All-Time')}
             >
               All-Time
@@ -103,7 +96,7 @@ const Leaderboardpage = () => {
         </div>
 
         {/* Second section */}
-        <div className="flex items-center gap-3 flex-1 max-w-[40%]">
+        <div className="flex flex-col md:flex-row items-center gap-3 flex-1 max-w-full md:max-w-[40%] mt-4 md:mt-0">
           {/* Search Bar */}
           <div className="relative w-full">
             <IoSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
@@ -116,9 +109,8 @@ const Leaderboardpage = () => {
           </div>
 
           {/* Crystal Chart Icon */}
-          <div onClick={() => setIsWalletModalOpen(true)} className="relative flex items-center justify-center bg-[#25223D] border border-[#464558] px-4 py-2 rounded-[20px]  cursor-pointer">
-            <MdOutlineSettingsInputComponent
-              className="text-lg" />
+          <div onClick={() => setIsWalletModalOpen(true)} className="relative flex items-center justify-center bg-[#25223D] border border-[#464558] px-4 py-2 rounded-[20px] cursor-pointer mt-4 md:mt-0">
+            <MdOutlineSettingsInputComponent className="text-lg" />
             <div className="absolute -bottom-1 -right-1 flex items-center justify-center w-4 h-4 bg-[#AA00FF] rounded-full text-[10px] font-medium">
               2
             </div>
