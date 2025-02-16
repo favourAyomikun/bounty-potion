@@ -36,7 +36,7 @@ const LeaderboardDashboard = () => {
 
             {/* First section */}
             <div className="flex items-center justify-between mt-20 mb-6">
-            <div className="flex flex-wrap gap-2 md:space-x-4">
+            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-20">
             {/* Tab Navigation */}
                     <div className="flex items-center space-x-4">
                         <button
