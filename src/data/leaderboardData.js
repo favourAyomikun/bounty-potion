@@ -1,6 +1,6 @@
 export const leaderboardData = [
     {
-      token: "ORANGIE",
+      token: "ORANGIE1",
       lastTrade: "2 min",
       mc: "279K",
       invested: "10.2Ξ",
@@ -13,7 +13,7 @@ export const leaderboardData = [
       hold: "3 min",
     },
     {
-      token: "ORANGIE",
+      token: "ORANGIE2",
       lastTrade: "2 min",
       mc: "279K",
       invested: "10.2Ξ",
@@ -26,7 +26,7 @@ export const leaderboardData = [
       hold: "3 min",
     },
     {
-      token: "ORANGIE",
+      token: "ORANGIE3",
       lastTrade: "2 min",
       mc: "279K",
       invested: "10.2Ξ",
