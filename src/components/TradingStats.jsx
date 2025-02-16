@@ -131,7 +131,6 @@ const TradingStats = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     )

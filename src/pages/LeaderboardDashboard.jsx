@@ -181,7 +181,7 @@ const LeaderboardDashboard = () => {
                     </tbody>
                 </table>
             </div>
-        </div >
+        </div>
     );
 };
 
