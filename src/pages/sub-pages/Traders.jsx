@@ -3,7 +3,7 @@ import { traders } from '../../data/traders'
 const Traders = () => {
   return (
     <div>
-      <div className="overflow-x-auto p-2">
+      <div className="overflow-x-auto">
         <table className="w-full">
           <thead className="bg-[#25223D] text-gray-400 text-[13.9px]">
             <tr>

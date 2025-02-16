@@ -13,6 +13,8 @@ const Leaderboardpage = () => {
   const [selectedTimeFrame, setSelectedTimeFrame] = useState('Daily')
   const [isWalletModalOpen, setIsWalletModalOpen] = useState(false);
   const [isWalletConnected, setIsWalletConnected] = useState(false);
+  // const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
+
 
   const navigate = useNavigate()
 
@@ -106,7 +108,7 @@ const Leaderboardpage = () => {
           <div className="relative w-full">
             <IoSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <input
-            onClick={handleSearch}
+              onClick={handleSearch}
               type="text"
               placeholder="Search by name or wallet"
               className="w-full bg-gray-800 rounded-[20px] pl-10 pr-4 py-2 text-gray-300 border border-[#464558] focus:outline-none focus:ring-2 focus:ring-purple-600 text-sm"
@@ -114,8 +116,9 @@ const Leaderboardpage = () => {
           </div>
 
           {/* Crystal Chart Icon */}
-          <div className="relative flex items-center justify-center bg-[#25223D] border border-[#464558] px-4 py-2 rounded-[20px]">
-            <MdOutlineSettingsInputComponent className="text-lg cursor-pointer" />
+          <div onClick={() => setIsWalletModalOpen(true)} className="relative flex items-center justify-center bg-[#25223D] border border-[#464558] px-4 py-2 rounded-[20px]  cursor-pointer">
+            <MdOutlineSettingsInputComponent
+              className="text-lg" />
             <div className="absolute -bottom-1 -right-1 flex items-center justify-center w-4 h-4 bg-[#AA00FF] rounded-full text-[10px] font-medium">
               2
             </div>
