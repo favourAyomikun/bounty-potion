@@ -8,17 +8,15 @@ import { PiShareFill } from "react-icons/pi";
 import TradingStats from "../components/TradingStats";
 
 const LeaderboardDashboard = () => {
-    const [activeTab, setActiveTab] = useState("Daily");
     const [selectedTab, setSelectedTab] = useState('Traders')
-    const tabs = ["Daily", "Weekly", "Monthly", "All-Time"];
 
     const navigate = useNavigate()
 
     return (
-        <div className="bg-[#0a0a0a] text-white min-h-screen p-6">
+        <div className="bg-[#060611] text-white min-h-screen p-6">
             {/* Header */}
             <Header />
-            
+
             {/* Trading stats */}
             <TradingStats />
 
@@ -163,9 +161,11 @@ const LeaderboardDashboard = () => {
                                 </td>
                                 <td className="py-4 px-4 align-middle">{data.lastTrade}</td>
                                 <td className="py-4 px-4 align-middle">{data.mc}</td>
-                                <td className="py-4 px-4 align-middle">{data.invested}</td>
-                                <td className="py-4 px-4 align-middle text-green-500">{data.realizedPNL}</td>
-                                <td className="py-4 px-4 align-middle text-green-500">{data.roi}</td>
+                                <td className="flex flex-col py-4 px-4 align-middle">{data.invested}
+                                    <small className="text-xs">$2.346</small>
+                                </td>
+                                <td className="py-4 px-4 align-middle text-[#59CC6C]">{data.realizedPNL}</td>
+                                <td className="py-4 px-4 align-middle text-[#59CC6C]">{data.roi}</td>
                                 <td className="py-4 px-4 align-middle">{data.trades}</td>
                                 <td className="py-4 px-4 align-middle">{data.holding}</td>
                                 <td className="py-4 px-4 align-middle">{data.avgBuy}</td>

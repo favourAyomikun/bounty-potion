@@ -1,31 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CgProfile } from "react-icons/cg";
 import { FaExternalLinkAlt, FaSyncAlt } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa6";
 import { GiBull } from "react-icons/gi";
+import { PiShareFill } from 'react-icons/pi';
 const TradingStats = () => {
+    const [selectedTimeFrame, setSelectedTimeFrame] = useState('Daily')
+
     return (
-        <div className="flex space-x-6 p-6 bg-[#0f0f0f] rounded-2xl shadow-lg">
-            <div className="bg-[#0f0f0f] text-white p-6 rounded-2xl w-80 shadow-lg">
+        <div className="flex items-center space-x-6 h-[15rem]">
+            <div className="text-white p-6 w-[45%]">
                 {/* Profile Header */}
                 <div className="flex items-center space-x-4">
-                    <CgProfile className='text-3xl'/>
+                    <CgProfile className='text-4xl' />
                     <div>
                         <h2 className="text-lg font-semibold">Orangie</h2>
                         <p className="text-gray-400 text-sm">6sdE9C...dD4Sca</p>
                     </div>
                 </div>
 
-                {/* Account Info */}
-                <div className="mt-4 bg-[#1a1a1a] p-4 rounded-lg">
-                    <div className="flex justify-between text-gray-400 text-sm">
-                        <span>X Account</span>
-                        <span className="text-white font-medium flex items-center">
-                            @orangie <FaTwitter className="ml-1 text-blue-500" />
-                        </span>
+                {/* AccountInfo */}
+                <div className="flex flex-col justify-center mt-4 border border-[#23242C] bg-[#11121B] p-4 shadow-md h-34">
+                    <div className="flex justify-between text-gray-400 text-sm border-b border-[#23242C]">
+                        <span className='text-white'>X Account</span>
+                        <div>
+                            <span className="text-white font-medium flex items-center">
+                                @orangie
+                            </span>
+                            <small>279k followers</small>
+                        </div>
                     </div>
                     <div className="flex justify-between mt-2 text-gray-400 text-sm">
-                        <span>Last Trade</span>
+                        <span className='text-white'>Last Trade</span>
                         <span className="text-white font-medium flex items-center">
                             30 min ago <GiBull className="ml-1 text-green-500" />
                         </span>
@@ -33,38 +39,59 @@ const TradingStats = () => {
                 </div>
             </div>
 
-            <div className="bg-[#0f0f0f] text-white p-6 rounded-2xl w-full shadow-lg">
+            <div className="text-white p-6 w-full shadow-lg">
                 {/* Tabs */}
-                <div className="flex space-x-4 border-b border-gray-700 pb-2">
-                    {["Daily", "Weekly", "Monthly", "All-Time"].map((tab, index) => (
+                <div className="flex items-center space-x-4 pb-2">
+                    <div className="flex items-center space-x-4">
                         <button
-                            key={index}
-                            className={`text-sm px-4 py-1 rounded-full ${index === 0 ? "bg-[#6b6b6b] text-white" : "text-gray-400"
+                            className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTimeFrame === 'Daily' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
                                 }`}
+                            onClick={() => setSelectedTimeFrame('Daily')}
                         >
-                            {tab}
+                            Daily
                         </button>
-                    ))}
+                        <button
+                            className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTimeFrame === 'Weekly' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
+                                }`}
+                            onClick={() => setSelectedTimeFrame('Weekly')}
+                        >
+                            Weekly
+                        </button>
+                        <button
+                            className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTimeFrame === 'Monthly' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
+                                }`}
+                            onClick={() => setSelectedTimeFrame('Monthly')}
+                        >
+                            Monthly
+                        </button>
+                        <button
+                            className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTimeFrame === 'All-Time' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
+                                }`}
+                            onClick={() => setSelectedTimeFrame('All-Time')}
+                        >
+                            All-Time
+                        </button>
+                    </div>
                     <div className="flex-grow"></div>
                     <span className="text-gray-400 text-xs">Last refreshed seconds ago</span>
                     <FaSyncAlt className="text-gray-400 ml-2 cursor-pointer" />
-                    <FaExternalLinkAlt className="text-purple-500 ml-2 cursor-pointer" />
+                    <PiShareFill className="text-[#AA00FF] hover:text-[#7d5094] cursor-pointer text-xl" />
                 </div>
 
                 {/* Stats Grid */}
-                <div className="grid grid-cols-3 gap-4 mt-4 text-sm">
+                <div className="grid grid-cols-3 place-content-center gap-4 mt-4 text-sm border border-[#23242C] bg-[#11121B] p-4 h-34">
                     {/* Left Column */}
-                    <div>
-                        <div className="flex justify-between text-gray-400">
-                            <span>Tokens</span>
+                    <div className=" border-r border-[#23242C] px-2">
+                        <div className="flex justify-between text-white border-b border-[#23242C] pb-2">
+                            <span className='font-semibold'>Tokens</span>
                             <span className="text-white">104</span>
                         </div>
-                        <div className="flex justify-between text-gray-400 mt-2">
-                            <span>Win Rate</span>
+                        <div className="flex justify-between text-white border-b border-[#23242C] py-2">
+                            <span className='font-semibold'>Win Rate</span>
                             <span className="text-green-400">74%</span>
                         </div>
-                        <div className="flex justify-between text-gray-400 mt-2">
-                            <span>Trades</span>
+                        <div className="flex justify-between text-white pt-2">
+                            <span className='font-semibold'>Trades</span>
                             <span>
                                 <span className="text-green-400">201</span> /
                                 <span className="text-red-400">321</span>
@@ -73,37 +100,38 @@ const TradingStats = () => {
                     </div>
 
                     {/* Middle Column */}
-                    <div>
-                        <div className="flex justify-between text-gray-400">
-                            <span>Average Buy</span>
+                    <div className=" border-r border-[#23242C] px-2">
+                        <div className="flex justify-between text-white border-b border-[#23242C] pb-2">
+                            <span className='font-semibold'>Average Buy</span>
                             <span className="text-white">10.2 🪙</span>
                         </div>
-                        <div className="flex justify-between text-gray-400 mt-2">
-                            <span>Average Entry</span>
+                        <div className="flex justify-between text-white border-b border-[#23242C] py-2">
+                            <span className='font-semibold'>Average Entry</span>
                             <span className="text-white">$212K</span>
                         </div>
-                        <div className="flex justify-between text-gray-400 mt-2">
-                            <span>Average Hold</span>
+                        <div className="flex justify-between text-white pt-2">
+                            <span className='font-semibold'>Average Hold</span>
                             <span className="text-white">32 m</span>
                         </div>
                     </div>
 
                     {/* Right Column */}
                     <div>
-                        <div className="flex justify-between text-gray-400">
-                            <span>Total Invested</span>
+                        <div className="flex justify-between text-white border-b border-[#23242C] pb-2">
+                            <span className='font-semibold'>Total Invested</span>
                             <span className="text-white">100.2 🪙</span>
                         </div>
-                        <div className="flex justify-between text-gray-400 mt-2">
-                            <span>ROI</span>
+                        <div className="flex justify-between text-white border-b border-[#23242C] py-2">
+                            <span className='font-semibold'>ROI</span>
                             <span className="text-green-400">+304%</span>
                         </div>
-                        <div className="flex justify-between text-gray-400 mt-2">
-                            <span>Realized PNL</span>
+                        <div className="flex justify-between text-white pt-2">
+                            <span className='font-semibold'>Realized PNL</span>
                             <span className="text-green-400">+301.3</span>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     )
