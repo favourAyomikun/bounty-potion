@@ -84,70 +84,70 @@ const LeaderboardDashboard = () => {
                 <table className="w-full">
                     <thead className="bg-[#25223D] text-gray-400 text-xs">
                         <tr>
-                            <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                                 Token
                             </th>
-                            <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                                 <div className="flex justify-center items-center gap-1">
                                     Last Trade
                                     <MdOutlineArrowDropDown className="text-xl text-[#B2835F]" />
                                 </div>
                             </th>
-                            <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                                 <div className="flex justify-center items-center gap-1">
                                     MC
                                     <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
                                 </div>
                             </th>
-                            <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                                 <div className="flex justify-center items-center gap-1">
                                     Invested
                                     <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
                                 </div>
                             </th>
-                            <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                                 <div className="flex justify-center items-center gap-1">
                                     Realized PNL
                                     <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
                                 </div>
                             </th>
-                            <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                                 <div className="flex justify-center items-center gap-1">
                                     ROI
                                     <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
                                 </div>
                             </th>
-                            <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                                 <div className="flex justify-center items-center gap-1">
                                     Trades
                                     <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
                                 </div>
                             </th>
-                            <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                                 <div className="flex justify-center items-center gap-1">
                                     Holding
                                     <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
                                 </div>
                             </th>
-                            <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                                 <div className="flex justify-center items-center gap-1">
                                     Avg Buy
                                     <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
                                 </div>
                             </th>
-                            <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                                 <div className="flex justify-center items-center gap-1">
                                     Avg Sell
                                     <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
                                 </div>
                             </th>
-                            <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                                 <div className="flex justify-center items-center gap-1">
                                     Held
                                     <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
                                 </div>
                             </th>
-                            <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">Share</th>
+                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">Share</th>
                         </tr>
                     </thead>
                     <tbody>

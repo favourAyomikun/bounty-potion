@@ -21,59 +21,59 @@ const Traders = () => {
     <div>
       <div className="overflow-x-auto">
         <table className="w-full">
-          <thead className="bg-[#25223D] text-gray-400 text-[13.9px]">
+          <thead className="bg-[#25223D] text-gray-400 text-xs md:text-[13px]">
             <tr>
-              <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">Rank</th>
-              <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">Trader</th>
-              <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+              <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">Rank</th>
+              <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">Trader</th>
+              <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                 <div className="flex justify-center items-center gap-1">
                   Followers
                   <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
                 </div>
               </th>
-              <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+              <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                 <div className="flex justify-center items-center gap-1">
                   Tokens
                   <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
                 </div>
               </th>
-              <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+              <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                 <div className="flex justify-center items-center gap-1">
                   Win Rate
                   <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
                 </div>
               </th>
-              <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+              <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                 <div className="flex justify-center items-center gap-1">
                   Trades
                   <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
                 </div>
               </th>
-              <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+              <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                 <div className="flex justify-center items-center gap-1">
                   Avg Buy
                   <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
                 </div>
               </th>
-              <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+              <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                 <div className="flex justify-center items-center gap-1">
                   Avg Entry
                   <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
                 </div>
               </th>
-              <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+              <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                 <div className="flex justify-center items-center gap-1">
                   Avg Hold
                   <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
                 </div>
               </th>
-              <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">
+              <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                 <div className="flex justify-center items-center gap-1">
                   Realized PNL
                   <MdOutlineArrowDropDown className="text-xl text-[#CCAD59]" />
                 </div>
               </th>
-              <th className="pb-4 px-4 font-bold text-[13.9px] text-white align-middle">Share</th>
+              <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">Share</th>
             </tr>
           </thead>
           <tbody>
