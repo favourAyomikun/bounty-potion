@@ -72,7 +72,7 @@ const LeaderboardDashboard = () => {
 
                 {/* Second section */}
                 <div className="flex flex-row items-center gap-3 flex-1 max-w-full md:max-w-[40%] mt-4 md:mt-0">
-                    {/* Search Bar */}
+                {/* Search Bar */}
                     <div className="relative w-full">
                         <IoSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                         <input
@@ -80,7 +80,7 @@ const LeaderboardDashboard = () => {
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                             placeholder="Search by token or contact address"
-                            className="w-full bg-gray-800 rounded-[20px] pl-10 pr-4 py-2 text-gray-300 border border-[#464558] focus:outline-none focus:ring-2 focus:ring-purple-600 text-sm"
+                                className="w-full bg-gray-800 rounded-[20px] pl-10 pr-4 py-2 text-gray-300 border border-[#464558] focus:outline-none focus:ring-2 focus:ring-purple-600 text-sm"
                         />
                         {searchQuery && (
                             <button
