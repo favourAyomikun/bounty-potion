@@ -5,14 +5,35 @@ import { Routes, Route, useNavigate } from "react-router";
 import { MdOutlineSettingsInputComponent } from 'react-icons/md';
 import Groups from '../pages/sub-pages/Groups'
 import Traders from '../pages/sub-pages/Traders'
+import WalletModal from '../modals/WalletModal';
 
 const Leaderboardpage = () => {
   // state to track selected filters
   const [selectedTab, setSelectedTab] = useState('Traders')
   const [selectedTimeFrame, setSelectedTimeFrame] = useState('Daily')
+  const [isWalletModalOpen, setIsWalletModalOpen] = useState(false);
+  const [isWalletConnected, setIsWalletConnected] = useState(false);
 
   const navigate = useNavigate()
 
+  const handleRestrictedAction = (action) => {
+    if (!isWalletConnected) {
+      setIsWalletModalOpen(true);
+      return false;
+    }
+    return true;
+  };
+
+  const handleSearch = (e) => {
+    if (handleRestrictedAction('search')) {
+      // Proceed with search
+    }
+  };
+
+  const handleWalletConnect = () => {
+    setIsWalletConnected(true);
+    setIsWalletModalOpen(false);
+  };
 
   return (
     <div className="bg-[#060611] min-h-screen text-white p-6" style={{ fontFamily: "Sora" }}>
@@ -85,6 +106,7 @@ const Leaderboardpage = () => {
           <div className="relative w-full">
             <IoSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <input
+            onClick={handleSearch}
               type="text"
               placeholder="Search by name or wallet"
               className="w-full bg-gray-800 rounded-[20px] pl-10 pr-4 py-2 text-gray-300 border border-[#464558] focus:outline-none focus:ring-2 focus:ring-purple-600 text-sm"
@@ -100,6 +122,12 @@ const Leaderboardpage = () => {
           </div>
         </div>
       </div>
+
+      <WalletModal
+        isOpen={isWalletModalOpen}
+        onClose={() => setIsWalletModalOpen(false)}
+        onConnect={handleWalletConnect}
+      />
 
       {/* Nested Routes for Traders & Groups */}
       <Routes>
