@@ -22,7 +22,7 @@ const TradingStats = () => {
                 {/* AccountInfo */}
                 <div className="flex flex-col justify-center mt-4 border border-[#23242C] bg-[#11121B] p-4 shadow-md h-34">
                     <div className="flex justify-between text-gray-400 text-sm border-b border-[#23242C]">
-                        <span className='text-white'>X Account</span>
+                        <span className='text-white font-semibold'>X Account</span>
                         <div>
                             <span className="text-white font-medium flex items-center">
                                 @orangie
@@ -31,7 +31,7 @@ const TradingStats = () => {
                         </div>
                     </div>
                     <div className="flex justify-between mt-2 text-gray-400 text-sm">
-                        <span className='text-white'>Last Trade</span>
+                        <span className='text-white font-semibold'>Last Trade</span>
                         <span className="text-white font-medium flex items-center">
                             30 min ago <GiBull className="ml-1 text-green-500" />
                         </span>
