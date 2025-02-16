@@ -4,6 +4,7 @@ import WalletModal from '../../modals/WalletModal';
 import { useState } from 'react';
 import { PiShareFill } from 'react-icons/pi';
 import { CgProfile } from 'react-icons/cg';
+import { useNavigate } from 'react-router';
 
 const Traders = () => {
   const [isWalletModalOpen, setIsWalletModalOpen] = useState(false);
@@ -13,6 +14,8 @@ const Traders = () => {
     setIsWalletConnected(true);
     setIsWalletModalOpen(false);
   };
+
+  const navigate = useNavigate()
 
   return (
     <div>
@@ -79,7 +82,7 @@ const Traders = () => {
                 <td className="py-4 px-4 align-middle">{trader.rank}</td>
                 <td onClick={() => setIsWalletModalOpen(true)} className="py-4 px-4 align-middle cursor-pointer">
                   <div className="flex justify-center items-center space-x-2">
-                    <CgProfile className='text-xl'/>
+                    <CgProfile className='text-xl' />
                     <div>
                       <div className="font-medium">{trader.name}</div>
                       <div className="text-gray-400 text-sm">{trader.handle}</div>
@@ -94,7 +97,7 @@ const Traders = () => {
                 <td className="py-4 px-4 align-middle">{trader.avgEntry}</td>
                 <td className="py-4 px-4 align-middle">{trader.avgHold}</td>
                 <td className="py-4 px-4 align-middle text-green-500">{trader.pnl}</td>
-                <td className="py-4 px-4 align-middle">
+                <td className="py-4 px-4 align-middle" onClick={() => navigate('/leaderboard-dashboard')}>
                   <button className="text-[#AA00FF] hover:text-[#7d5094] cursor-pointer text-lg">
                     <PiShareFill />
                   </button>

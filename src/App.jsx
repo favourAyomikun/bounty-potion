@@ -7,7 +7,7 @@ function App() {
     <div style={{ fontFamily: "Sora" }}>
       <Routes >
         <Route path='/*' element={<Leaderboardpage />} />
-        <Route path='/leader-dashboard' element={<LeaderboardDashboard />} />
+        <Route path='/leaderboard-dashboard' element={<LeaderboardDashboard />} />
       </Routes>
     </div>
   )
