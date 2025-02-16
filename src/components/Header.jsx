@@ -6,7 +6,7 @@ const Header = () => {
         <header className="flex justify-between items-center mb-6">
             <div className="flex space-x-4 items-center gap-20">
                 <a href="/">
-                    <img src="/api/placeholder/32/32" alt="Logo" className="h-8" />
+                    <img src="../../public/potion_logo.jpg" alt="potion_logo" className="" />
                 </a>
                 <nav className="flex space-x-6 text-base">
                     <a href="/" className="text-white">Leaderboards</a>

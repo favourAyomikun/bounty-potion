@@ -37,10 +37,11 @@ const Leaderboardpage = () => {
             <button
               className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTab === 'Groups' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
                 }`}
-                onClick={() => {
-                  setSelectedTab("Groups")
-                  navigate("/groups")
-                }}            >
+              onClick={() => {
+                setSelectedTab("Groups")
+                navigate("/groups")
+              }}
+            >
               Groups
             </button>
           </div>
