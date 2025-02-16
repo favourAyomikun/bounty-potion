@@ -6,9 +6,9 @@ const Header = () => {
         <header className="flex flex-col md:flex-row justify-between items-center mb-6">
             <div className="flex flex-col md:flex-row items-center gap-4 md:gap-20 outline-none">
                 <a href="/">
-                    <img src="/potion_logo.jpg" alt="potion_logo" className="w-24 md:w-auto" />
+                    <img src="/potion_logo.jpg" alt="potion_logo" className="w-36 md:w-auto" />
                 </a>
-                <nav className="flex flex-wrap gap-2 md:space-x-6 text-base outline-none">
+                <nav className="flex flex-wrap gap-2 md:space-x-6 font-bold text-sm md:text-base outline-none">
                     <a href="/" className="text-white">Leaderboards</a>
                     <a href="https://docs.potionleaderboard.com" target='_blank' rel="noopener noreferrer" className="text-white">Learn</a>
                     <a href="#" className="text-white">Prizes</a>

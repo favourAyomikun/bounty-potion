@@ -1,7 +1,7 @@
 const Groups = () => {
     return (
       <div>
-        <h1 className="text-4xl font-semibold text-center mt-24">Coming soon....📢</h1>
+        <h1 className="text-2xl md:text-4xl font-semibold text-center mt-24">Coming soon....📢</h1>
       </div>
     );
   };

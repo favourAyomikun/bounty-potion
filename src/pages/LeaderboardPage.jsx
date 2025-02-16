@@ -96,7 +96,7 @@ const Leaderboardpage = () => {
         </div>
 
         {/* Second section */}
-        <div className="flex flex-col md:flex-row items-center gap-3 flex-1 max-w-full md:max-w-[40%] mt-4 md:mt-0">
+        <div className="flex items-center gap-3 flex-1 max-w-full md:max-w-[40%] mt-4 md:mt-0">
           {/* Search Bar */}
           <div className="relative w-full">
             <IoSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />

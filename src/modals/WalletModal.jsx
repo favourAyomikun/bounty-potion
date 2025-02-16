@@ -35,12 +35,12 @@ const WalletModal = ({ isOpen, onClose, onConnect }) => {
               <DialogPanel className="bg-[#1E1E2E] rounded-lg p-6 max-w-md w-full mx-4">
                 <DialogTitle
                   as="h3"
-                  className="text-lg font-medium leading-6 text-white mb-2"
+                  className="text-sm md:text-lg font-medium leading-6 text-white mb-2"
                 >
                   Connect Your Wallet
                 </DialogTitle>
 
-                <div className="bg-[#25223D] border border-[#464558] rounded-lg p-4 mb-4 cursor-pointer">
+                <div className="bg-[#25223D] border border-[#464558] rounded-lg p-4 mb-4 cursor-pointer text-sm md:text-base">
                   <p className="text-gray-300">
                     Please connect your wallet to access this feature.
                   </p>
@@ -48,14 +48,14 @@ const WalletModal = ({ isOpen, onClose, onConnect }) => {
 
                 <button
                   onClick={onConnect}
-                  className="w-full bg-[#AA00FF] hover:bg-[#8800CC] text-white font-bold py-3 px-4 rounded-[20px] transition-colors cursor-pointer"
+                  className="w-full bg-[#AA00FF] hover:bg-[#8800CC] text-white font-bold py-3 px-4 rounded-[20px] transition-colors cursor-pointer text-sm md:text-base"
                 >
                   Connect Wallet
                 </button>
 
                 <button
                   onClick={onClose}
-                  className="w-full mt-2 bg-transparent hover:bg-gray-700 text-gray-300 font-semibold py-2 px-4 rounded-[20px] transition-colors cursor-pointer"
+                  className="w-full mt-2 bg-transparent hover:bg-gray-700 text-gray-300 font-semibold py-2 px-4 rounded-[20px] transition-colors cursor-pointe text-sm md:text-baser"
                 >
                   Cancel
                 </button>
