@@ -1,6 +1,16 @@
 import { MdOutlineArrowDropDown } from 'react-icons/md';
 import { traders } from '../../data/traders'
+import WalletModal from '../../modals/WalletModal';
+import { useState } from 'react';
 const Traders = () => {
+    const [isWalletModalOpen, setIsWalletModalOpen] = useState(false);
+    const [isWalletConnected, setIsWalletConnected] = useState(false);
+
+  const handleWalletConnect = () => {
+    setIsWalletConnected(true);
+    setIsWalletModalOpen(false);
+  };
+
   return (
     <div>
       <div className="overflow-x-auto">
@@ -64,7 +74,7 @@ const Traders = () => {
             {traders.map((trader, index) => (
               <tr key={index} className="border-t border-[#23242C] bg-[#11121B] text-center">
                 <td className="py-4 px-4 align-middle">{trader.rank}</td>
-                <td className="py-4 px-4 align-middle">
+                <td onClick={() => setIsWalletModalOpen(true)} className="py-4 px-4 align-middle cursor-pointer">
                   <div className="flex justify-center items-center space-x-2">
                     <img src="/api/placeholder/32/32" alt="Avatar" className="rounded-full h-8 w-8" />
                     <div>
@@ -90,6 +100,11 @@ const Traders = () => {
         </table>
       </div>
 
+      <WalletModal
+        isOpen={isWalletModalOpen}
+        onClose={() => setIsWalletModalOpen(false)}
+        onConnect={handleWalletConnect}
+      />
     </div>
   );
 };

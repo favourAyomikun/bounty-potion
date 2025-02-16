@@ -11,10 +11,10 @@ const Leaderboardpage = () => {
   // state to track selected filters
   const [selectedTab, setSelectedTab] = useState('Traders')
   const [selectedTimeFrame, setSelectedTimeFrame] = useState('Daily')
+
+  
   const [isWalletModalOpen, setIsWalletModalOpen] = useState(false);
   const [isWalletConnected, setIsWalletConnected] = useState(false);
-  // const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
-
 
   const navigate = useNavigate()
 
@@ -38,7 +38,7 @@ const Leaderboardpage = () => {
   };
 
   return (
-    <div className="bg-[#060611] min-h-screen text-white p-6" style={{ fontFamily: "Sora" }}>
+    <div className="bg-[#060611] min-h-screen text-white p-6">
       {/* Header */}
       <Header />
 
