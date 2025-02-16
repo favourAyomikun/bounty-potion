@@ -1,4 +1,4 @@
-import Leaderboardpage from "./page/Leaderboardpage"
+import Leaderboardpage from "./pages/Leaderboardpage"
 
 function App() {
   return (
