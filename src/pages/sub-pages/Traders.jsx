@@ -1,11 +1,9 @@
+import { MdOutlineArrowDropDown } from 'react-icons/md';
+import { traders } from '../../data/traders'
 const Traders = () => {
-    return (
-      <div>
-        <h2 className="text-xl font-semibold">Traders Leaderboard</h2>
-        {/* Traders content here */}
-
-        {/* Leaderboard Table(Third section) */}
-      <div className="overflow-x-auto p-2"> {/* Added padding to the wrapper */}
+  return (
+    <div>
+      <div className="overflow-x-auto p-2">
         <table className="w-full">
           <thead className="bg-[#25223D] text-gray-400 text-[13.9px]">
             <tr>
@@ -92,9 +90,8 @@ const Traders = () => {
         </table>
       </div>
 
-      </div>
-    );
-  };
-  
-  export default Traders;
-  
+    </div>
+  );
+};
+
+export default Traders;

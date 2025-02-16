@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 import { IoSearch } from "react-icons/io5";
-import { traders } from '../data/traders';
 import Header from '../components/Header';
-import { MdOutlineArrowDropDown, MdOutlineSettingsInputComponent } from 'react-icons/md';
+import { Routes, Route, useNavigate } from "react-router";
+import { MdOutlineSettingsInputComponent } from 'react-icons/md';
+import Groups from '../pages/sub-pages/Groups'
+import Traders from '../pages/sub-pages/Traders'
 
 const Leaderboardpage = () => {
   // state to track selected filters
   const [selectedTab, setSelectedTab] = useState('Traders')
   const [selectedTimeFrame, setSelectedTimeFrame] = useState('Daily')
 
+  const navigate = useNavigate()
+
 
   return (
-    <div className="bg-[#060611] min-h-screen text-white p-6">
+    <div className="bg-[#060611] min-h-screen text-white p-6" style={{ fontFamily: "Sora" }}>
       {/* Header */}
       <Header />
 
@@ -21,18 +25,16 @@ const Leaderboardpage = () => {
           {/* Tab Navigation */}
           <div className="flex items-center space-x-4">
             <button
-              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${
-                selectedTab === 'Traders' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
-              }`}
-              onClick={() => setSelectedTab('Traders')}
+              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTab === 'Traders' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
+                }`}
+              onClick={() => navigate("/")}
             >
               Traders
             </button>
             <button
-              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${
-                selectedTab === 'Groups' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
-              }`}
-              onClick={() => setSelectedTab('Groups')}
+              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTab === 'Groups' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
+                }`}
+              onClick={() => navigate("/groups")}
             >
               Groups
             </button>
@@ -41,33 +43,29 @@ const Leaderboardpage = () => {
           {/* Time Frame Selection */}
           <div className="flex items-center space-x-4">
             <button
-              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${
-                selectedTimeFrame === 'Daily' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
-              }`}
+              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTimeFrame === 'Daily' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
+                }`}
               onClick={() => setSelectedTimeFrame('Daily')}
             >
               Daily
             </button>
             <button
-              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${
-                selectedTimeFrame === 'Weekly' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
-              }`}
+              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTimeFrame === 'Weekly' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
+                }`}
               onClick={() => setSelectedTimeFrame('Weekly')}
             >
               Weekly
             </button>
             <button
-              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${
-                selectedTimeFrame === 'Monthly' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
-              }`}
+              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTimeFrame === 'Monthly' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
+                }`}
               onClick={() => setSelectedTimeFrame('Monthly')}
             >
               Monthly
             </button>
             <button
-              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${
-                selectedTimeFrame === 'All-Time' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
-              }`}
+              className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTimeFrame === 'All-Time' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
+                }`}
               onClick={() => setSelectedTimeFrame('All-Time')}
             >
               All-Time
@@ -97,7 +95,12 @@ const Leaderboardpage = () => {
         </div>
       </div>
 
-      
+      {/* Nested Routes for Traders & Groups */}
+      <Routes>
+        {/* Default route for /leaderboard(homepage) should show Traderspage */}
+        <Route index element={<Traders />} />
+        <Route path="groups" element={<Groups />} />
+      </Routes>
     </div>
   );
 };
