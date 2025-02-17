@@ -6,6 +6,7 @@ import { MdOutlineSettingsInputComponent } from 'react-icons/md';
 import Groups from '../pages/sub-pages/Groups'
 import Traders from '../pages/sub-pages/Traders'
 import WalletModal from '../modals/WalletModal';
+import HeaderAlert from '../components/HeaderAlert';
 
 const Leaderboardpage = () => {
   // state to track selected filters
@@ -41,6 +42,9 @@ const Leaderboardpage = () => {
     <div className="bg-[#060611] min-h-screen text-white p-6">
       {/* Header */}
       <Header />
+
+      {/* Alerts */}
+      <HeaderAlert />
 
       <div className="flex flex-col md:flex-row items-center justify-between mt-20 mb-6">
         <div className="flex flex-col md:flex-row items-center gap-4 md:gap-20">
