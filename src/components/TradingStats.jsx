@@ -23,7 +23,7 @@ const TradingStats = () => {
 
                     {/* Account Info */}
                     <div className="flex flex-col mt-4 border border-[#23242C] bg-[#11121B] p-4 shadow-md">
-                        <div className="flex flex-col sm:flex-row sm:justify-between text-gray-400 text-sm border-b border-[#23242C] pb-2">
+                        <div className="flex flex-row items-center justify-between text-gray-400 text-sm border-b border-[#23242C] pb-2">
                             <span className="text-white font-semibold">X Account</span>
                             <div className="mt-1 sm:mt-0">
                                 <span className="text-white font-medium flex items-center">@orangie</span>
@@ -48,11 +48,10 @@ const TradingStats = () => {
                         {['Daily', 'Weekly', 'Monthly', 'All-Time'].map((timeFrame) => (
                             <button
                                 key={timeFrame}
-                                className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${
-                                    selectedTimeFrame === timeFrame 
-                                        ? 'bg-[#25223D] border-[#464558] text-white' 
+                                className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTimeFrame === timeFrame
+                                        ? 'bg-[#25223D] border-[#464558] text-white'
                                         : 'text-[#858585]'
-                                }`}
+                                    }`}
                                 onClick={() => setSelectedTimeFrame(timeFrame)}
                             >
                                 {timeFrame}
