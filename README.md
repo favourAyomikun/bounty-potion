@@ -1,74 +1,70 @@
-Leaderboard Dashboard Project
-Overview
-This project is a React-based web application designed to display a leaderboard for traders and groups. It includes features such as filtering, searching, and pagination to enhance user experience. The application also integrates a wallet connection modal for restricted actions.
+```markdown
+# Bounty Potion
 
-Features
-Leaderboard Display: View traders and groups with detailed statistics.
+A web application deployed on Vercel: [Bounty Potion](https://bounty-potion-l962.vercel.app/).
 
-Filtering: Filter data by time frames (Daily, Weekly, Monthly, All-Time).
+## 🎨 Design Decisions
 
-Search Functionality: Search for specific traders or tokens by name or wallet address.
+- **Next.js Framework**: Chosen for its SSR and static generation capabilities, improving SEO and performance.
+- **Tailwind CSS**: Used for styling to maintain a consistent and scalable design system.
+- **Component-Based Architecture**: Ensures reusability and maintainability of UI elements.
+- **Vercel Deployment**: Provides seamless CI/CD integration with GitHub, ensuring quick updates and rollbacks.
 
-Pagination: Navigate through large datasets with ease.
+## 🔍 Assumptions
 
-Wallet Integration: Connect your wallet to access restricted features.
+- Users will access the application from modern web browsers.
+- The project requires minimal backend interactions, focusing on a frontend-driven approach.
+- The deployment process should be simple and automated using Vercel.
 
-Responsive Design: Optimized for both desktop and mobile devices.
+## 🛠️ Testing the Functionality
 
-Components
-Header
-Logo: Navigates to the home page.
+To test the functionality locally:
 
-Navigation Links: Access leaderboards, learn more, and view prizes.
+```bash
+# Clone the repository
+git clone https://github.com/your-repo/bounty-potion.git
 
-Social Media Icons: Links to Twitter and Discord.
+# Navigate into the project directory
+cd bounty-potion
 
-Profile Icon: Placeholder for user profile.
+# Install dependencies
+npm install
 
-HeaderAlert
-Connect Alert: Prompts users to connect their X account.
+# Run the development server
+npm run dev
+```
 
-Feature Release Alert: Notifies users of new feature releases.
+- Open `http://localhost:3000/` in a browser.
+- Verify UI responsiveness and interaction.
+- Check console logs for any errors.
+- Run tests (if applicable) using:
 
-LeaderboardPage
-Tab Navigation: Switch between Traders and Groups.
+```bash
+npm test
+```
 
-Time Frame Selection: Filter data by different time frames.
+## 🚀 Deployment Guide
 
-Search Bar: Search for specific entries.
+### Staging Environment
 
-Wallet Modal: Connect your wallet to access restricted features.
+1. Push changes to the `staging` branch.
+2. Connect the repository to Vercel.
+3. Configure a separate staging environment in Vercel settings.
+4. Deploy automatically via Vercel.
+5. Access the staging environment via the generated Vercel URL.
 
-LeaderboardDashboard
-Profile Section: Displays user profile information.
+### Production Environment
 
-Trading Stats: Shows detailed trading statistics.
+1. Merge `staging` into `main`.
+2. Vercel will automatically trigger a production deployment.
+3. Verify the deployment at `https://bounty-potion-l962.vercel.app/`.
 
-Leaderboard Table: Displays filtered and paginated data.
+## 🤝 Contributing
 
-Traders
-Table Display: Shows trader information with pagination.
+Contributions are welcome! To contribute:
 
-Wallet Modal: Connect your wallet to access restricted features.
-
-WalletModal
-Modal Dialog: Prompts users to connect their wallet.
-
-Connect Button: Initiates wallet connection.
-
-Cancel Button: Closes the modal.
-
-Pagination
-Page Navigation: Navigate through pages of data.
-
-Item Count: Displays the range of items currently shown.
-
-TradingStats
-Profile Info: Displays user profile and last trade information.
-
-Stats Grid: Shows detailed trading statistics for different time frames.
-
-Data
-leaderboardData.js: Contains sample data for the leaderboard.
-
-traders.js: Contains sample data for traders.
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes and commit (`git commit -m 'Added new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Open a Pull Request.
