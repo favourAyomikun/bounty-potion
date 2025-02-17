@@ -49,24 +49,26 @@ const LeaderboardDashboard = () => {
             <Header />
 
             {/* Profile Section */}
-            <div className="flex flex-col md:flex-row items-center gap-6 p-4 bg-[#11121B] border border-[#23242C] rounded-lg shadow-lg">
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 p-4 bg-[#11121B] border border-[#23242C] rounded-lg shadow-lg w-full">
                 {/* Profile Picture */}
-                <CgProfile className="text-4xl"/>
+                <div className="flex-shrink-0">
+                    <CgProfile className="text-4xl sm:text-5xl" />
+                </div>
 
                 {/* Profile Info */}
-                <div className="flex-1">
+                <div className="flex-1 w-full sm:w-auto text-center sm:text-left">
                     <h2 className="text-lg font-semibold">{profile.name}</h2>
 
                     {/* Wallet Address with Copy to Clipboard */}
-                    <div className="flex items-center gap-2 text-gray-400 text-sm">
-                        <span>{profile.walletAddress}</span>
+                    <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 text-gray-400 text-sm">
+                        <span className="truncate max-w-[150px] sm:max-w-none">{profile.walletAddress}</span>
                         <button onClick={copyToClipboard} className="text-gray-300 hover:text-white">
                             <FaCopy />
                         </button>
                     </div>
 
                     {/* X Account Handle & Followers */}
-                    <div className="flex items-center gap-2 mt-2 text-gray-400 text-sm">
+                    <div className="flex flex-wrap justify-center sm:justify-start items-center gap-2 mt-2 text-gray-400 text-sm">
                         <CgProfile className="text-lg" />
                         <span className="text-white">{profile.xHandle}</span>
                         <span>{profile.followers} followers</span>
@@ -74,10 +76,11 @@ const LeaderboardDashboard = () => {
                 </div>
 
                 {/* Current P&L */}
-                <div className="text-green-400 text-xl font-bold">
+                <div className="text-green-400 text-xl font-bold mt-3 sm:mt-0 text-center sm:text-right w-full sm:w-auto">
                     P&L: {profile.pnl}
                 </div>
             </div>
+
 
             {/* Trading Stats */}
             <TradingStats />
