@@ -5,7 +5,7 @@ A web application deployed on Vercel: [Bounty Potion](https://bounty-potion-l962
 
 ## 🎨 Design Decisions
 
-- **Next.js Framework**: Chosen for its SSR and static generation capabilities, improving SEO and performance.
+- **React.js with Vite**: Chosen for its fast development environment and optimized production builds, ensuring a smooth developer experience and great performance.
 - **Tailwind CSS**: Used for styling to maintain a consistent and scalable design system.
 - **Component-Based Architecture**: Ensures reusability and maintainability of UI elements.
 - **Vercel Deployment**: Provides seamless CI/CD integration with GitHub, ensuring quick updates and rollbacks.
