@@ -1,16 +1,34 @@
 import { useState, useMemo } from "react";
 import { leaderboardData } from "../data/leaderboardData";
 import Header from "../components/Header";
+import TradingStats from "../components/TradingStats";
 import { useNavigate } from "react-router";
 import { IoSearch } from "react-icons/io5";
-import { MdOutlineArrowDropDown, MdOutlineSettingsInputComponent } from "react-icons/md";
+import { MdOutlineSettingsInputComponent } from "react-icons/md";
 import { PiShareFill } from "react-icons/pi";
-import TradingStats from "../components/TradingStats";
+import { CgProfile } from "react-icons/cg";
+import { FaCopy } from "react-icons/fa";
 
 const LeaderboardDashboard = () => {
     const [selectedTab, setSelectedTab] = useState('Traders');
     const [searchQuery, setSearchQuery] = useState('');
     const navigate = useNavigate();
+
+    // Sample Profile Data
+    const profile = {
+        name: "Orangie",
+        walletAddress: "6sdE9C...dD4Sca",
+        xHandle: "@orangie",
+        followers: "279k",
+        pnl: "+301.3", // Example PNL value
+        profilePic: "https://via.placeholder.com/50", // Placeholder profile picture
+    };
+
+    // Copy wallet address to clipboard
+    const copyToClipboard = () => {
+        navigator.clipboard.writeText(profile.walletAddress);
+        alert("Wallet Address Copied!");
+    };
 
     // Memoized filtered data
     const filteredData = useMemo(() => {
@@ -20,7 +38,6 @@ const LeaderboardDashboard = () => {
 
         return leaderboardData.filter(item => {
             const tokenMatch = item.token.toLowerCase().includes(query);
-            // Assuming each item has a contractAddress field
             const addressMatch = item.contractAddress?.toLowerCase().includes(query);
             return tokenMatch || addressMatch;
         });
@@ -31,55 +48,79 @@ const LeaderboardDashboard = () => {
             {/* Header */}
             <Header />
 
-            {/* Trading stats */}
-            <TradingStats />
+            {/* Profile Section */}
+            <div className="flex flex-col md:flex-row items-center gap-6 p-4 bg-[#11121B] border border-[#23242C] rounded-lg shadow-lg">
+                {/* Profile Picture */}
+                <CgProfile className="text-4xl"/>
 
-            {/* First section */}
-            <div className="flex flex-col md:flex-row items-center justify-between mt-20 mb-6">
-                <div className="flex flex-col md:flex-row items-center gap-4 md:gap-20">
-                    {/* Tab Navigation */}
-                    <div className="flex flex-wrap gap-2 md:space-x-4">
-                        <button
-                            className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTab === 'Traders' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
-                                }`}
-                            onClick={() => {
-                                setSelectedTab("Traders")
-                            }}
-                        >
-                            Traders
+                {/* Profile Info */}
+                <div className="flex-1">
+                    <h2 className="text-lg font-semibold">{profile.name}</h2>
+
+                    {/* Wallet Address with Copy to Clipboard */}
+                    <div className="flex items-center gap-2 text-gray-400 text-sm">
+                        <span>{profile.walletAddress}</span>
+                        <button onClick={copyToClipboard} className="text-gray-300 hover:text-white">
+                            <FaCopy />
                         </button>
-                        <button
-                            className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTab === 'Tokens' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
-                                }`}
-                            onClick={() => {
-                                setSelectedTab("Tokens")
-                            }}
-                        >
-                            Tokens
-                        </button>
-                        <button
-                            className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTab === 'Groups' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
-                                }`}
-                            onClick={() => {
-                                setSelectedTab("Groups")
-                                navigate("/groups")
-                            }}
-                        >
-                            Groups
-                        </button>
+                    </div>
+
+                    {/* X Account Handle & Followers */}
+                    <div className="flex items-center gap-2 mt-2 text-gray-400 text-sm">
+                        <CgProfile className="text-lg" />
+                        <span className="text-white">{profile.xHandle}</span>
+                        <span>{profile.followers} followers</span>
                     </div>
                 </div>
 
-                {/* Second section */}
+                {/* Current P&L */}
+                <div className="text-green-400 text-xl font-bold">
+                    P&L: {profile.pnl}
+                </div>
+            </div>
+
+            {/* Trading Stats */}
+            <TradingStats />
+
+            {/* Search & Navigation */}
+            <div className="flex flex-col md:flex-row items-center justify-between mt-6 mb-6">
+                {/* Tab Navigation */}
+                <div className="flex flex-wrap gap-2 md:space-x-4">
+                    <button
+                        className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTab === 'Traders' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
+                            }`}
+                        onClick={() => setSelectedTab("Traders")}
+                    >
+                        Traders
+                    </button>
+                    <button
+                        className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTab === 'Tokens' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
+                            }`}
+                        onClick={() => setSelectedTab("Tokens")}
+                    >
+                        Tokens
+                    </button>
+                    <button
+                        className={`text-sm px-4 py-2 rounded-[20px] cursor-pointer ${selectedTab === 'Groups' ? 'bg-[#25223D] border-[#464558] text-white' : 'text-[#858585]'
+                            }`}
+                        onClick={() => {
+                            setSelectedTab("Groups");
+                            navigate("/groups");
+                        }}
+                    >
+                        Groups
+                    </button>
+                </div>
+
+                {/* Search Bar */}
                 <div className="flex flex-row items-center gap-3 flex-1 max-w-full md:max-w-[40%] mt-4 md:mt-0">
-                    {/* Search Bar */}
                     <div className="relative w-full">
                         <IoSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                         <input
                             type="text"
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            placeholder="Search by token or contact address"
+                            placeholder="Search by token or wallet address"
                             className="w-full bg-gray-800 rounded-[20px] pl-10 pr-4 py-2 text-gray-300 border border-[#464558] focus:outline-none focus:ring-2 focus:ring-purple-600 text-sm"
                         />
                         {searchQuery && (
@@ -111,64 +152,22 @@ const LeaderboardDashboard = () => {
                                 Token
                             </th>
                             <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
-                                <div className="flex justify-center items-center gap-1">
-                                    Last Trade
-                                    <MdOutlineArrowDropDown className="text-xl text-[#B2835F]" />
-                                </div>
+                                Last Trade
                             </th>
                             <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
-                                <div className="flex justify-center items-center gap-1">
-                                    MC
-                                    <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
-                                </div>
+                                MC
                             </th>
                             <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
-                                <div className="flex justify-center items-center gap-1">
-                                    Invested
-                                    <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
-                                </div>
+                                Invested
                             </th>
                             <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
-                                <div className="flex justify-center items-center gap-1">
-                                    Realized PNL
-                                    <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
-                                </div>
+                                Realized PNL
                             </th>
                             <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
-                                <div className="flex justify-center items-center gap-1">
-                                    ROI
-                                    <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
-                                </div>
+                                ROI
                             </th>
                             <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
-                                <div className="flex justify-center items-center gap-1">
-                                    Trades
-                                    <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
-                                </div>
-                            </th>
-                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
-                                <div className="flex justify-center items-center gap-1">
-                                    Holding
-                                    <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
-                                </div>
-                            </th>
-                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
-                                <div className="flex justify-center items-center gap-1">
-                                    Avg Buy
-                                    <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
-                                </div>
-                            </th>
-                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
-                                <div className="flex justify-center items-center gap-1">
-                                    Avg Sell
-                                    <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
-                                </div>
-                            </th>
-                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
-                                <div className="flex justify-center items-center gap-1">
-                                    Held
-                                    <MdOutlineArrowDropDown className="text-xl text-[#AA00FF]" />
-                                </div>
+                                Trades
                             </th>
                             <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">Share</th>
                         </tr>
@@ -177,37 +176,20 @@ const LeaderboardDashboard = () => {
                         {filteredData.length > 0 ? (
                             filteredData.map((data, index) => (
                                 <tr key={index} className="border-t border-[#23242C] bg-[#11121B] text-center">
-                                    <td className="py-4 px-4 align-middle">
-                                        <div className="flex justify-center items-center gap-2">
-                                            <div className="w-6 h-6 rounded-full bg-[#25223D]"></div>
-                                            {data.token}
-                                        </div>
-                                    </td>
+                                    <td className="py-4 px-4 align-middle">{data.token}</td>
                                     <td className="py-4 px-4 align-middle">{data.lastTrade}</td>
                                     <td className="py-4 px-4 align-middle">{data.mc}</td>
-                                    <td className="flex flex-col py-4 px-4 align-middle">{data.invested}
-                                        <small className="text-xs">$2.346</small>
-                                    </td>
+                                    <td className="py-4 px-4 align-middle">{data.invested}</td>
                                     <td className="py-4 px-4 align-middle text-[#59CC6C]">{data.realizedPNL}</td>
                                     <td className="py-4 px-4 align-middle text-[#59CC6C]">{data.roi}</td>
                                     <td className="py-4 px-4 align-middle">{data.trades}</td>
-                                    <td className="py-4 px-4 align-middle">{data.holding}</td>
-                                    <td className="py-4 px-4 align-middle">{data.avgBuy}</td>
-                                    <td className="py-4 px-4 align-middle">{data.avgSell}</td>
-                                    <td className="py-4 px-4 align-middle">{data.hold}</td>
                                     <td className="py-4 px-4 align-middle">
-                                        <button className="text-[#AA00FF] hover:text-[#7d5094] cursor-pointer text-lg">
-                                            <PiShareFill />
-                                        </button>
+                                        <PiShareFill className="text-[#AA00FF]" />
                                     </td>
                                 </tr>
                             ))
                         ) : (
-                            <tr>
-                                <td colSpan="12" className="py-8 text-center text-gray-400 bg-[#11121B]">
-                                    No results found for "{searchQuery}"
-                                </td>
-                            </tr>
+                            <tr><td colSpan="8" className="text-center">No results found</td></tr>
                         )}
                     </tbody>
                 </table>
