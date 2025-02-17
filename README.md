@@ -37,11 +37,6 @@ npm run dev
 - Open `http://localhost:3000/` in a browser.
 - Verify UI responsiveness and interaction.
 - Check console logs for any errors.
-- Run tests (if applicable) using:
-
-```bash
-npm test
-```
 
 ## 🚀 Deployment Guide
 
