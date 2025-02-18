@@ -24,15 +24,15 @@ const TradingStats = () => {
                     {/* Account Info */}
                     <div className="flex flex-col mt-4 border border-[#23242C] bg-[#11121B] p-4 shadow-md">
                         <div className="flex flex-row items-center justify-between text-gray-400 text-sm border-b border-[#23242C] pb-2">
-                            <span className="text-white font-semibold">X Account</span>
+                            <span className="text-xs md:text-sm text-white font-semibold">X Account</span>
                             <div className="mt-1 sm:mt-0">
-                                <span className="text-white font-medium flex items-center">@orangie</span>
+                                <span className="text-xs md:text-sm text-white font-medium flex items-center">@orangie</span>
                                 <small>279k followers</small>
                             </div>
                         </div>
                         <div className="flex justify-between mt-2 text-gray-400 text-sm">
                             <span className="text-white font-semibold">Last Trade</span>
-                            <span className="text-white font-medium flex items-center">
+                            <span className="text-xs md:text-sm text-white font-medium flex items-center">
                                 30 min ago <GiBull className="ml-1 text-green-500" />
                             </span>
                         </div>
@@ -70,15 +70,15 @@ const TradingStats = () => {
                     {/* Left Column */}
                     <div className="sm:border-r border-[#23242C] px-2">
                         <div className="flex justify-between text-white border-b border-[#23242C] pb-2">
-                            <span className="font-semibold">Tokens</span>
+                            <span className="font-semibold text-xs md:text-sm">Tokens</span>
                             <span>104</span>
                         </div>
                         <div className="flex justify-between text-white border-b border-[#23242C] py-2">
-                            <span className="font-semibold">Win Rate</span>
+                            <span className="font-semibold text-xs md:text-sm">Win Rate</span>
                             <span className="text-green-400">74%</span>
                         </div>
                         <div className="flex justify-between text-white pt-2">
-                            <span className="font-semibold">Trades</span>
+                            <span className="font-semibold text-xs md:text-sm">Trades</span>
                             <span>
                                 <span className="text-green-400">201</span> /
                                 <span className="text-red-400">321</span>
@@ -89,15 +89,15 @@ const TradingStats = () => {
                     {/* Middle Column */}
                     <div className="sm:border-r border-[#23242C] px-2">
                         <div className="flex justify-between text-white border-b border-[#23242C] pb-2">
-                            <span className="font-semibold">Average Buy</span>
+                            <span className="font-semibold text-xs md:text-sm">Average Buy</span>
                             <span>10.2 🪙</span>
                         </div>
                         <div className="flex justify-between text-white border-b border-[#23242C] py-2">
-                            <span className="font-semibold">Average Entry</span>
+                            <span className="font-semibold text-xs md:text-sm">Average Entry</span>
                             <span>$212K</span>
                         </div>
                         <div className="flex justify-between text-white pt-2">
-                            <span className="font-semibold">Average Hold</span>
+                            <span className="font-semibold text-xs md:text-sm">Average Hold</span>
                             <span>32 m</span>
                         </div>
                     </div>
@@ -105,15 +105,15 @@ const TradingStats = () => {
                     {/* Right Column */}
                     <div className="px-2">
                         <div className="flex justify-between text-white border-b border-[#23242C] pb-2">
-                            <span className="font-semibold">Total Invested</span>
+                            <span className="font-semibold text-xs md:text-sm">Total Invested</span>
                             <span>100.2 🪙</span>
                         </div>
                         <div className="flex justify-between text-white border-b border-[#23242C] py-2">
-                            <span className="font-semibold">ROI</span>
+                            <span className="font-semibold text-xs md:text-sm">ROI</span>
                             <span className="text-green-400">+304%</span>
                         </div>
                         <div className="flex justify-between text-white pt-2">
-                            <span className="font-semibold">Realized PNL</span>
+                            <span className="font-semibold text-xs md:text-sm">Realized PNL</span>
                             <span className="text-green-400">+301.3</span>
                         </div>
                     </div>

@@ -178,14 +178,14 @@ const LeaderboardDashboard = () => {
                         {filteredData.length > 0 ? (
                             filteredData.map((data, index) => (
                                 <tr key={index} className="border-t border-[#23242C] bg-[#11121B] text-center">
-                                    <td className="py-4 px-4 align-middle">{data.token}</td>
-                                    <td className="py-4 px-4 align-middle">{data.lastTrade}</td>
-                                    <td className="py-4 px-4 align-middle">{data.mc}</td>
-                                    <td className="py-4 px-4 align-middle">{data.invested}</td>
-                                    <td className="py-4 px-4 align-middle text-[#59CC6C]">{data.realizedPNL}</td>
-                                    <td className="py-4 px-4 align-middle text-[#59CC6C]">{data.roi}</td>
-                                    <td className="py-4 px-4 align-middle">{data.trades}</td>
-                                    <td className="py-4 px-4 align-middle">
+                                    <td className="py-2 md:py-4 px-2 md:px-4 text-sm md:text-base align-middle">{data.token}</td>
+                                    <td className="py-2 md:py-4 px-2 md:px-4 text-sm md:text-base align-middle">{data.lastTrade}</td>
+                                    <td className="py-2 md:py-4 px-2 md:px-4 text-sm md:text-base align-middle">{data.mc}</td>
+                                    <td className="py-2 md:py-4 px-2 md:px-4 text-sm md:text-base align-middle">{data.invested}</td>
+                                    <td className="py-2 md:py-4 px-2 md:px-4 text-sm md:text-base align-middle text-[#59CC6C]">{data.realizedPNL}</td>
+                                    <td className="py-2 md:py-4 px-2 md:px-4 text-sm md:text-base align-middle text-[#59CC6C]">{data.roi}</td>
+                                    <td className="py-2 md:py-4 px-2 md:px-4 text-sm md:text-base align-middle">{data.trades}</td>
+                                    <td className="py-2 md:py-4 px-2 md:px-4 text-sm md:text-base align-middle">
                                         <PiShareFill className="text-[#AA00FF]" />
                                     </td>
                                 </tr>
