@@ -75,7 +75,7 @@ const LeaderboardDashboard = () => {
                 </div>
 
                 {/* Current P&L */}
-                <div className="text-green-400 text-xl font-bold mt-3 sm:mt-0 text-center sm:text-right w-full sm:w-auto">
+                <div className="text-green-400 text-base sm:text-lg md:text-xl font-bold mt-3 sm:mt-0 text-center sm:text-right w-full sm:w-auto">
                     P&L: {profile.pnl}
                 </div>
             </div>
@@ -150,48 +150,55 @@ const LeaderboardDashboard = () => {
                 <table className="w-full">
                     <thead className="bg-[#25223D] text-gray-400 text-xs">
                         <tr>
-                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
+                            <th className="py-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle text-left">
                                 Token
                             </th>
-                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
+                            <th className="py-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                                 Last Trade
                             </th>
-                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
+                            <th className="py-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                                 MC
                             </th>
-                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
+                            <th className="py-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                                 Invested
                             </th>
-                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
+                            <th className="py-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                                 Realized PNL
                             </th>
-                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
+                            <th className="py-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                                 ROI
                             </th>
-                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
+                            <th className="py-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
                                 Trades
                             </th>
-                            <th className="pb-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">Share</th>
+                            <th className="py-4 px-4 font-bold text-xs md:text-[13px] text-white align-middle">
+                                Share
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         {filteredData.length > 0 ? (
                             filteredData.map((data, index) => (
-                                <tr key={index} className="border-t border-[#23242C] bg-[#11121B] text-center">
-                                    <td className="py-2 md:py-4 px-2 md:px-4 text-sm md:text-base align-middle">{data.token}</td>
-                                    <td className="py-2 md:py-4 px-2 md:px-4 text-sm md:text-base align-middle">{data.lastTrade}</td>
-                                    <td className="py-2 md:py-4 px-2 md:px-4 text-sm md:text-base align-middle">{data.mc}</td>
-                                    <td className="py-2 md:py-4 px-2 md:px-4 text-sm md:text-base align-middle">{data.invested}</td>
-                                    <td className="py-2 md:py-4 px-2 md:px-4 text-sm md:text-base align-middle text-[#59CC6C]">{data.realizedPNL}</td>
-                                    <td className="py-2 md:py-4 px-2 md:px-4 text-sm md:text-base align-middle text-[#59CC6C]">{data.roi}</td>
-                                    <td className="py-2 md:py-4 px-2 md:px-4 text-sm md:text-base align-middle">{data.trades}</td>
+                                <tr key={index} className="border-t border-[#23242C] bg-[#11121B] hover:bg-[#1a1b27] transition-all duration-300 ease-in-out cursor-pointer">
                                     <td className="py-2 md:py-4 px-2 md:px-4 text-sm md:text-base align-middle">
-                                        <PiShareFill className="text-[#AA00FF]" />
+                                        <div className="flex items-center space-x-2 text-left">
+                                            <CgProfile className="text-lg flex-shrink-0" />
+                                            <span>{data.token}</span>
+                                        </div>
+                                    </td>
+                                    <td className="py-2 md:py-4 px-2 md:px-4 text-sm md:text-base align-middle text-center">{data.lastTrade}</td>
+                                    <td className="py-2 md:py-4 px-2 md:px-4 text-sm md:text-base align-middle text-center">{data.mc}</td>
+                                    <td className="py-2 md:py-4 px-2 md:px-4 text-sm md:text-base align-middle text-center">{data.invested}</td>
+                                    <td className="py-2 md:py-4 px-2 md:px-4 text-sm md:text-base align-middle text-center text-[#59CC6C]">{data.realizedPNL}</td>
+                                    <td className="py-2 md:py-4 px-2 md:px-4 text-sm md:text-base align-middle text-center text-[#59CC6C]">{data.roi}</td>
+                                    <td className="py-2 md:py-4 px-2 md:px-4 text-sm md:text-base align-middle text-center">{data.trades}</td>
+                                    <td className="py-2 md:py-4 px-2 md:px-4 text-base md:text-lg align-middle text-center">
+                                        <PiShareFill className="text-[#AA00FF] hover:text-[#7d5094] cursor-pointer inline" />
                                     </td>
                                 </tr>
                             ))
                         ) : (
-                            <tr><td colSpan="8" className="text-center">No results found</td></tr>
+                            <tr><td colSpan="8" className="text-center py-4">No results found</td></tr>
                         )}
                     </tbody>
                 </table>
