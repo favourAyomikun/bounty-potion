@@ -102,20 +102,20 @@ const Traders = () => {
                   <div className="flex items-center space-x-3">
                     <CgProfile className="text-xl flex-shrink-0" />
                     <div className="flex flex-col items-start">
-                      <div className="font-medium">{trader.name}</div>
-                      <div className="text-gray-400 text-sm">{trader.handle}</div>
+                      <div className="font-medium text-sm md:text-base">{trader.name}</div>
+                      <div className="text-gray-400 text-xs md:text-sm">{trader.handle}</div>
                     </div>
                   </div>
                 </td>
-                <td className="py-4 px-4 align-middle">{trader.followers}</td>
-                <td className="py-4 px-4 align-middle">{trader.tokens}</td>
-                <td className="py-4 px-4 align-middle text-green-500">{trader.winRate}</td>
-                <td className="py-4 px-4 align-middle">{trader.trades}</td>
-                <td className="py-4 px-4 align-middle">{trader.avgBuy}</td>
-                <td className="py-4 px-4 align-middle">{trader.avgEntry}</td>
-                <td className="py-4 px-4 align-middle">{trader.avgHold}</td>
-                <td className="py-4 px-4 align-middle text-green-500">{trader.pnl}</td>
-                <td className="py-4 px-4 align-middle" onClick={() => navigate('/leaderboard-dashboard')}>
+                <td className="py-4 px-4 align-middle text-sm md:text-base">{trader.followers}</td>
+                <td className="py-4 px-4 align-middle text-sm md:text-base">{trader.tokens}</td>
+                <td className="py-4 px-4 align-middle text-sm md:text-base text-green-500">{trader.winRate}</td>
+                <td className="py-4 px-4 align-middle text-sm md:text-base">{trader.trades}</td>
+                <td className="py-4 px-4 align-middle text-sm md:text-base">{trader.avgBuy}</td>
+                <td className="py-4 px-4 align-middle text-sm md:text-base">{trader.avgEntry}</td>
+                <td className="py-4 px-4 align-middle text-sm md:text-base">{trader.avgHold}</td>
+                <td className="py-4 px-4 align-middle text-sm md:text-base text-green-500">{trader.pnl}</td>
+                <td className="py-4 px-4 align-middle text-sm md:text-base" onClick={() => navigate('/leaderboard-dashboard')}>
                   <button className="text-[#AA00FF] hover:text-[#7d5094] cursor-pointer text-lg transition-colors duration-300 ease-in-out">
                     <PiShareFill />
                   </button>
