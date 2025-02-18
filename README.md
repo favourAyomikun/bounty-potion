@@ -53,13 +53,3 @@ npm run dev
 1. Merge `staging` into `main`.
 2. Vercel will automatically trigger a production deployment.
 3. Verify the deployment at `https://bounty-potion-l962.vercel.app/`.
-
-## 🤝 Contributing
-
-Contributions are welcome! To contribute:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes and commit (`git commit -m 'Added new feature'`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Open a Pull Request.
