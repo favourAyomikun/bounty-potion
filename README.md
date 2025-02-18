@@ -34,7 +34,7 @@ npm install
 npm run dev
 ```
 
-- Open `http://localhost:3000/` in a browser.
+- Open `http://localhost:5173/` in a browser.
 - Verify UI responsiveness and interaction.
 - Check console logs for any errors.
 
