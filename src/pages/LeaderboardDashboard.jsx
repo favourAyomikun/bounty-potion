@@ -51,7 +51,7 @@ const LeaderboardDashboard = () => {
             {/* Profile Section */}
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 p-4 bg-[#11121B] border border-[#23242C] rounded-lg shadow-lg w-full">
                 {/* Profile Picture */}
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 cursor-pointer">
                     <CgProfile className="text-4xl sm:text-5xl" />
                 </div>
 
@@ -62,15 +62,14 @@ const LeaderboardDashboard = () => {
                     {/* Wallet Address with Copy to Clipboard */}
                     <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 text-gray-400 text-sm">
                         <span className="truncate max-w-[150px] sm:max-w-none">{profile.walletAddress}</span>
-                        <button onClick={copyToClipboard} className="text-gray-300 hover:text-white">
+                        <button onClick={copyToClipboard} className="text-gray-300 hover:text-white cursor-pointer">
                             <FaCopy />
                         </button>
                     </div>
 
                     {/* X Account Handle & Followers */}
                     <div className="flex flex-wrap justify-center sm:justify-start items-center gap-2 mt-2 text-gray-400 text-sm">
-                        <CgProfile className="text-lg" />
-                        <span className="text-white">{profile.xHandle}</span>
+                        <span className="text-white cursor-pointer">{profile.xHandle}</span>
                         <span>{profile.followers} followers</span>
                     </div>
                 </div>
