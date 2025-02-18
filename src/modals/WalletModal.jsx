@@ -55,7 +55,7 @@ const WalletModal = ({ isOpen, onClose, onConnect }) => {
 
                 <button
                   onClick={onClose}
-                  className="w-full mt-2 bg-transparent hover:bg-gray-700 text-gray-300 font-semibold py-2 px-4 rounded-[20px] transition-colors cursor-pointe text-sm md:text-baser"
+                  className="w-full mt-2 bg-transparent hover:bg-gray-700 text-gray-300 font-semibold py-2 px-4 rounded-[20px] transition-colors cursor-pointer text-sm md:text-baser"
                 >
                   Cancel
                 </button>
